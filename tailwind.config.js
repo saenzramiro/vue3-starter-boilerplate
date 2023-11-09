@@ -1,30 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
-module.exports = {
-	content: ['./index.html', './src/**/*.{vue,js,ts}'],
+export default {
+	// configure the paths to all of your source files
+	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', 'node_modules/preline/dist/*.js'],
+	// enable dark mode via class strategy
+	darkMode: 'class',
 	theme: {
-		extend: {
-			colors: {
-				jade: {
-					50: '#eafff5',
-					100: '#cdfee5',
-					200: '#a0fad1',
-					300: '#63f2b9',
-					400: '#25e29d',
-					500: '#00bd7e',
-					600: '#00a46e',
-					700: '#00835c',
-					800: '#00674a',
-					900: '#00553e',
-				},
-			},
-			screens: {
-				'hover-hover': { raw: '(hover: hover)' },
-			},
-			transitionDuration: {
-				400: '400ms',
-			},
-		},
+		extend: {},
 	},
-	plugins: [],
+	plugins: [require('preline/plugin')],
 };
